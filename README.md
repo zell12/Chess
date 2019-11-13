@@ -1,4 +1,4 @@
-# Chess play robot, only for study purpose internal UiPath! 
+# Chess play robot, only used as internal example inside UiPath! 
 
 1. This workflow will try to keep playing chess in chess.com
 
