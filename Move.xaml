@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:aa="clr-namespace:AttendedRobotStatus.Activities;assembly=AttendedRobotStatus" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Ori" Type="InArgument(x:Int32)" />
     <x:Property Name="BM" Type="InArgument(x:String)" />
@@ -6,10 +6,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>476,1868.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>613.6,3071.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -33,10 +33,10 @@
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Drawing.Drawing2D</x:String>
       <x:String>System.Drawing.Internal</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -57,12 +57,11 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Python</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="436,1788.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="593.6,3011.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="ui:UiElement" Name="Ele" />
+      <Variable x:TypeArguments="ui:UiElement" Name="ele" />
       <Variable x:TypeArguments="x:Int32" Name="L_scale" />
       <Variable x:TypeArguments="sd:Graphics" Default="[Graphics.FromHwnd(IntPtr.Zero)]" Name="g" />
       <Variable x:TypeArguments="sd:Pen" Default="[new Pen(Color.red, 5)]" Name="pen" />
@@ -72,13 +71,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Chess'" sap:VirtualizedContainerService.HintSize="414,1664.66666666667" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="ae316a561b745a7bf53e4813043e015e" Selector="&lt;html app='chrome.exe' title='* - Chess.co*' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Chess'" sap:VirtualizedContainerService.HintSize="552,2918.4" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="ae316a561b745a7bf53e4813043e015e" Selector="&lt;html app='chrome.exe' title='* - Chess.co*' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,1518.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518.4,2771.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:Rectangle" Name="posi" />
               <Variable x:TypeArguments="x:Int32" Name="OffsetX" />
@@ -90,12 +89,13 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:WaitUiElementAppear DisplayName="Find Element 'DIV  piece'" FoundElement="[ele]" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4" WaitActive="False" WaitVisible="False">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="476.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;BM: &quot; + BM.ToString + Environment.NewLine +&#xD;&#xA;&quot;Ori: &quot; + Ori.ToString + Environment.NewLine +&#xD;&#xA;&quot;BM.Substring(0,1) - &quot; + BM.Substring(0,1) + Environment.NewLine +&#xD;&#xA;&quot;BM.Substring(1,1) - &quot; + BM.Substring(1,1)]" />
+            <ui:WaitUiElementAppear DisplayName="Find Element 'DIV  piece'" FoundElement="[ele]" sap:VirtualizedContainerService.HintSize="476.8,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4" WaitActive="False" WaitVisible="False">
               <ui:WaitUiElementAppear.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="fa7c4df42076e2478ae1550208c69fc5" Selector="[&quot;&lt;webctrl tag='DIV' class='piece square-0&quot;+BM.Substring(0,1)+&quot;0&quot;+BM.Substring(1,1)+&quot;' /&gt;&quot;]" TimeoutMS="100" WaitForReady="COMPLETE" />
               </ui:WaitUiElementAppear.Target>
             </ui:WaitUiElementAppear>
-            <Assign sap:VirtualizedContainerService.HintSize="314,62" sap2010:WorkflowViewState.IdRef="Assign_23">
+            <Assign sap:VirtualizedContainerService.HintSize="476.8,60" sap2010:WorkflowViewState.IdRef="Assign_23">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:Rectangle">[posi]</OutArgument>
               </Assign.To>
@@ -103,7 +103,7 @@
                 <InArgument x:TypeArguments="sd:Rectangle">[ele.GetPosition.Rectangle.Value]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="314,62" sap2010:WorkflowViewState.IdRef="Assign_24">
+            <Assign sap:VirtualizedContainerService.HintSize="476.8,60" sap2010:WorkflowViewState.IdRef="Assign_24">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[L_Pix]</OutArgument>
               </Assign.To>
@@ -111,7 +111,7 @@
                 <InArgument x:TypeArguments="x:Int32">[ele.GetPosition.Rectangle.Value.Width]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="314,62" sap2010:WorkflowViewState.IdRef="Assign_25">
+            <Assign sap:VirtualizedContainerService.HintSize="476.8,60" sap2010:WorkflowViewState.IdRef="Assign_25">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[L_scale]</OutArgument>
               </Assign.To>
@@ -119,7 +119,7 @@
                 <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(ele.GetPosition.Rectangle.Value.Width*100/g.DpiX)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="314,62" sap2010:WorkflowViewState.IdRef="Assign_26">
+            <Assign sap:VirtualizedContainerService.HintSize="476.8,60" sap2010:WorkflowViewState.IdRef="Assign_26">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[OffsetX]</OutArgument>
               </Assign.To>
@@ -127,7 +127,7 @@
                 <InArgument x:TypeArguments="x:Int32" xml:space="preserve">[-Ori*( int32.Parse(BM.Substring(2,1)) -  int32.Parse(BM.Substring(0,1)))]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="314,62" sap2010:WorkflowViewState.IdRef="Assign_27">
+            <Assign sap:VirtualizedContainerService.HintSize="476.8,60" sap2010:WorkflowViewState.IdRef="Assign_27">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[OffsetY]</OutArgument>
               </Assign.To>
@@ -135,7 +135,8 @@
                 <InArgument x:TypeArguments="x:Int32" xml:space="preserve">[Ori*( int32.Parse(BM.Substring(3,1)) -  int32.Parse(BM.Substring(1,1)))]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="314,62" sap2010:WorkflowViewState.IdRef="Assign_28">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="476.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Posi: &quot; + posi.ToString + Environment.NewLine +&#xD;&#xA;&quot;L_Pix:  &quot; + L_pix.ToString + Environment.NewLine +&#xD;&#xA;&quot;L_scale: &quot; + L_scale.ToString + Environment.NewLine +&#xD;&#xA;&quot;OffsetX: &quot; + OffsetX.ToString + Environment.NewLine +&#xD;&#xA;&quot;OffsetY: &quot; + OffsetY.ToString]" />
+            <Assign sap:VirtualizedContainerService.HintSize="476.8,60" sap2010:WorkflowViewState.IdRef="Assign_28">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:Point">[posi.Location]</OutArgument>
               </Assign.To>
@@ -143,45 +144,162 @@
                 <InArgument x:TypeArguments="sd:Point">[posi.Location + new size(OffsetX*L_pix, OffSetY*L_pix)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:Highlight Color="Red" ContinueOnError="True" HighlightTime="300" sap:VirtualizedContainerService.HintSize="314,68" sap2010:WorkflowViewState.IdRef="Highlight_4">
-              <ui:Highlight.Target>
-                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Element="[Ele]" WaitForReady="INTERACTIVE" />
-              </ui:Highlight.Target>
-            </ui:Highlight>
-            <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="DrawRectangle">
-              <InvokeMethod.TargetObject>
-                <InArgument x:TypeArguments="sd:Graphics">[g]</InArgument>
-              </InvokeMethod.TargetObject>
-              <InArgument x:TypeArguments="sd:Pen">[pen]</InArgument>
-              <InArgument x:TypeArguments="sd:Rectangle">[posi]</InArgument>
-            </InvokeMethod>
-            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOWN" DisplayName="Pick up the piece" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[Ele]" InformativeScreenshot="ae0d321c36a3f4246939a63e7db61212" TimeoutMS="1000" WaitForReady="COMPLETE" />
-              </ui:Click.Target>
-            </ui:Click>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[(OffsetX*L_scale).ToString + &quot; &quot; +(OffsetY*L_scale).ToString]" />
-            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_UP" DisplayName="Put down the Piece" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition OffsetX="[OffsetX*L_scale]" OffsetY="[OffsetY*L_scale]" Position="Center" />
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[Ele]" InformativeScreenshot="ae0d321c36a3f4246939a63e7db61212" TimeoutMS="1000" WaitForReady="COMPLETE" />
-              </ui:Click.Target>
-            </ui:Click>
+            <Sequence DisplayName="Source Position" sap:VirtualizedContainerService.HintSize="476.8,576" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="241.6,143.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <aa:AttendedRobotStatus sap2010:Annotation.AnnotationText="Moving FROM" DisplayName="Attended Robot Status" ErrorLvl="False" sap:VirtualizedContainerService.HintSize="200,50.4" sap2010:WorkflowViewState.IdRef="AttendedRobotStatus_3" InfoLvl="False" Message="Best Move: Piece to move" WarnLvl="False">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </aa:AttendedRobotStatus>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <ui:Highlight Color="Red" ContinueOnError="True" HighlightTime="300" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="Highlight_4">
+                <ui:Highlight.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[ele]" WaitForReady="INTERACTIVE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Highlight.Target>
+              </ui:Highlight>
+              <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="DrawRectangle">
+                <InvokeMethod.TargetObject>
+                  <InArgument x:TypeArguments="sd:Graphics">[g]</InArgument>
+                </InvokeMethod.TargetObject>
+                <InArgument x:TypeArguments="sd:Pen">[pen]</InArgument>
+                <InArgument x:TypeArguments="sd:Rectangle">[posi]</InArgument>
+              </InvokeMethod>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOWN" DisplayName="Pick up the piece" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[ele]" InformativeScreenshot="ae0d321c36a3f4246939a63e7db61212" TimeoutMS="1000" WaitForReady="COMPLETE" />
+                </ui:Click.Target>
+              </ui:Click>
+            </Sequence>
+            <Sequence DisplayName="Target Position" sap:VirtualizedContainerService.HintSize="476.8,1049.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Int32" Name="L_ScaleOffsetX" />
+                <Variable x:TypeArguments="x:Int32" Name="L_ScaleOffsetY" />
+                <Variable x:TypeArguments="x:Int32" Name="randomMilliseconds" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="435.2,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Int32">[L_ScaleOffsetX]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Int32">[OffsetX*L_scale]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Int32">[L_ScaleOffsetY]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Int32">[OffsetY*L_scale]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="435.2,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[(L_ScaleOffsetX).ToString + &quot; &quot; +(L_ScaleOffsetY).ToString]" />
+              <Assign sap:VirtualizedContainerService.HintSize="435.2,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[randomMilliseconds]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">[CInt(Math.Ceiling(Rnd() * 2000)) + 1]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,328" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="241.6,249.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <aa:AttendedRobotStatus sap2010:Annotation.AnnotationText="Moving TO" DisplayName="Attended Robot Status" ErrorLvl="False" sap:VirtualizedContainerService.HintSize="200,50.4" sap2010:WorkflowViewState.IdRef="AttendedRobotStatus_1" InfoLvl="False" Message="[&quot;Moving to best location (Random delay: &quot;+ randomMilliseconds.ToString +&quot; ms)&quot;]" WarnLvl="True">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </aa:AttendedRobotStatus>
+                    <Delay sap2010:Annotation.AnnotationText="Random delay from 1000 to 2000 ms" Duration="[New TimeSpan(0,0,0,0,randomMilliseconds)]" sap:VirtualizedContainerService.HintSize="200,66.4" sap2010:WorkflowViewState.IdRef="Delay_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Delay>
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_UP" DisplayName="Put down the Piece" sap:VirtualizedContainerService.HintSize="435.2,107.2" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="[L_ScaleOffsetX]" OffsetY="[L_ScaleOffsetY]" Position="Center" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[ele]" InformativeScreenshot="ae0d321c36a3f4246939a63e7db61212" TimeoutMS="1000" WaitForReady="COMPLETE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:Highlight Color="Red" ContinueOnError="True" HighlightTime="300" sap:VirtualizedContainerService.HintSize="435.2,68.8" sap2010:WorkflowViewState.IdRef="Highlight_5">
+                <ui:Highlight.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[&quot;&lt;webctrl tag='DIV' class='piece square-0&quot;+BM.Substring(2,1)+&quot;0&quot;+BM.Substring(3,1)+&quot;' /&gt;&quot;]" WaitForReady="INTERACTIVE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Highlight.Target>
+              </ui:Highlight>
+            </Sequence>
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:BrowserScope>
   </Sequence>
 </Activity>
