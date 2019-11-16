@@ -1,16 +1,19 @@
-# Chess play robot, only used as internal example inside UiPath! 
+# Chess bot - Only for example inside UiPath!!!
 
-1. This workflow will try to keep playing chess in chess.com
+This work flow depends on Stockfish and python-chess 
 
-2. Tt depends on the stockfish engine, which can be found https://stockfishchess.org/
+Setup:
+1. download stockfish engine from https://stockfishchess.org/
+2. modify engine.py, update the path of stockfish
+3. get ready python 3.6, pip install python-chess
+4. run engine.py to verify step 1-3
+5. open workflow, modify In_Python_Path to the folder of your python
+6. open chess.com, login, start play, if play mode, change parameter In_PlayMode as true, false for puszzles
+7. run
 
-3. Current layout scan is using the picec number of the selector, which is not stable sometimes, in that case, it will refresh the whole page
-
-4. keep play for a while would be banned by chess
+Please be aware, your account and IP might be banned if keep playing for long.
 
 TODO:
-1. change the layout scan from variable + selector to extract table
-2. remove the refresh
-3. enlarge the python scope to reduce actions for reloading model
-4. add an alternative engine for alpha-zero-chess in AI Fab
-5. an introduction of the implementation
+1. 2nd engine for Alpha-zero-chess in AI Fabric
+2. Random delays to mimic human behavior  
+3. Support https://www.chess.com/play/computer which has totally diffrent selectors
