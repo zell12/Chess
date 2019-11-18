@@ -2,9 +2,9 @@ import chess
 import chess.engine
 import time
 
-
-engine = chess.engine.SimpleEngine.popen_uci(r"C:\Users\He.Wang\rnd\stockfish-10-win\Windows\stockfish_10_x64_bmi2.exe")
-
+start=time.time()
+engine = chess.engine.SimpleEngine.popen_uci(r"C:\Users\Russel Alfeche\Downloads\stockfish-10-win\stockfish-10-win\Windows\stockfish_10_x64_bmi2.exe")
+gap1 = time.time()-start
 def move(fen_str,move_steps=20):
     global engine
     MAXSTEPS = 20
